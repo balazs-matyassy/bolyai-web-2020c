@@ -1,0 +1,53 @@
+SELECT *
+FROM country
+WHERE code LIKE '%A%'
+ORDER BY name DESC;
+
+SELECT `Name`, (`Population` / 1000000) AS `PopulationM`, UPPER(LEFT(`Name`, 3)) AS `Abbreviation`
+FROM `country`
+WHERE `Name` LIKE 'A%' AND `Population` BETWEEN 1000000 AND 5000000
+ORDER BY `Name` DESC;
+
+
+
+Logikai sorrend (logical query processing)
+
+1. FROM (táblá, táblák kiválasztása)
+2. WHERE (szűrés, "sorokat vágunk ki a táblázatból")
+
+name LIKE '%A%'
+name = 'Hungary'
+name IN ('Hungary', 'Germany', 'Austria')
+
+population <> 1000000
+population = 1000000
+population >= 100000 AND population < 9999999
+population BETWEEN 100000 AND 9999999
+
+
+3. SELECT (megjelenített oszlopok, "oszlopokat vágunk ki a táblázatból")
+
+SELECT population, name AS 'Név', LEFT(name, 3) AS 'Rövidítés'
+https://www.w3schools.com/mysql/mysql_ref_functions.asp
+
+4. ORDER BY
+rendezés 1 vagy több oszlop alapján növekvő (ASC, de ez a default) vagy csökkenő (DESC) sorrendben
+
+NEM definiált a sorrend (kicsi rendszerek általában ID alapján szokták)
+
+
+------
+
+SELECT *
+FROM `country`
+WHERE `Name` LIKE '%a%' AND `Continent` = 'Africa' OR `Continent` = 'Asia' OR `Continent` = 'Europe';
+
+
+A nevükben 'A' betűt tartalmazó afrikai országok vagy bármilyen ázsiai vagy bármilyen európai.
+
+precedencia szabály: OR (+), AND (*)
+
+SELECT *
+FROM `country`
+WHERE `Name` LIKE '%a%' AND (`Continent` = 'Africa' OR `Continent` = 'Asia' OR `Continent` = 'Europe');
+A nevükben 'A' betűt tartalmazó országok, amelyek Európában, Afrikában vagy Ázsiában vannak.

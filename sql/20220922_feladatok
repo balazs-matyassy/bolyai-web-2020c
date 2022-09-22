@@ -1,0 +1,30 @@
+1. A nevében "A" betűt tartalmazó európai, afrikai ás ázsiai országok, ahol a lakosság 1M alatti, de 100K fölötti
+
+Ország kódját, nevét, lakosság számot (hány ezer)
+
+lakosság szerint csökkenő sorrendben rendezve
+
+
+SELECT `Code`, `Name`, ROUND(`Population` / 1000) AS `Population in 1000s`
+FROM `country`
+WHERE `Name` LIKE '%a%' AND `Continent` IN('Africa', 'Asia', 'Europe') AND `Population` BETWEEN 100000 AND 1000000
+ORDER BY `Population` DESC;
+
+
+pl. 600 000
++1 lakosság számot 600 helyett 600k formában jelenítse meg
+(szöveges függvények között érdemes keresni)
+
+SELECT `Code`, `Name`, CONCAT(ROUND(`Population` / 1000), 'k') AS `Population in 1000s`
+FROM `country`
+WHERE `Name` LIKE '%a%' AND `Continent` IN('Africa', 'Asia', 'Europe') AND `Population` BETWEEN 100000 AND 1000000
+ORDER BY `Population` DESC;
+
+
+2. Régió nevében kötőjelet tartalmazó holland városok neve és régiója.
+Név szerint növekvő sorrendben.
+
+SELECT `Name`, `District`
+FROM `city`
+WHERE `CountryCode` = 'NLD' AND `District` LIKE '%-%'
+ORDER BY `Population`;

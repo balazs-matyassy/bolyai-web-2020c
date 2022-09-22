@@ -1,0 +1,46 @@
+- szerveren belül több adatbázis
+- 1 adatbázis logikailag összetartozó táblákból áll
+- egy adatbázison belül több tábla
+- 1 tábla egy halmazt / főnevet... ír le
+
+MySQL szerver
+	iskola
+		osztaly
+		diak
+		tanar
+	bevasarlas
+
+
+táblán belül az oszlopoknak ("fejléc") van típusuk
+varchar(100) / char(100): szöveges érték (string), kötelező a hosszt megadni
+varchar dinamikus: ebben a példában 0 és 100 közötti helyet foglal
+char: pontosan 100 helyet foglal
+
+int: egész szám (nincs hossz)
+(year, bool -> tinyint, date, datetime)
+
+nullázhatóság (NULL / NOT NULL)
+NULL: pl. függetlenség dátuma lehet NULL, mivel vannak olyan országok, amelyek soha nem voltak gyarmatok
+NULL -> hiányzó, ismeretlen vagy irreleváns érték
+NOT NULL: pl. name, mivel az mindig elérhető
+
+
+
+primary key / elsődleges kulcs (általában id a neve): maradandó (nem változik, végleg egyedi) ÉS egyedi érték
+-> pl. 2020C
+AUTO_INCREMENT: az adatbázis magától adjon azonosítót növekvő sorrendben
+
+unique constraint (pillanatnyilag egydi)
+-> pl. 11.C (jövőre a 11.C nem egyenlő a mostanival, de egy adott pillanatban csak 1 lehet belőlük)
+
+foreign key constraint (nem lehet olyan gyereket létrehozni, aki nem létező szülőre hivatkozik,
+nem lehet olyan szülőt törölni, akinek van gyereke)
+NEM kötelező hozzáadni, foreign key constraint nélkül is működik az idegen kulcs-elsődleges kulcs kapcsolat
+
+many to one kapcsolat
+sok az egyhez kapcsolat
+pl. sok város egy országhoz
+mindig a "gyerek" hivatkozik a "szülőre"
+
+idegen kulcs = másik tábla elsődleges kulcsa
+
