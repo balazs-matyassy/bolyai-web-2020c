@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>1. feladat: Árfolyam</title>
+
+    <style>
+        table {
+            width: 640px;
+            margin: auto;
+            padding: 0;
+            background-color: lightgray;
+            border-collapse: collapse;
+            /* border-collapse: separate; */
+            table-layout: fixed;
+            /* table-layout: auto; */
+        }
+
+        table, td, th {
+            border: 1px solid gray;
+        }
+
+        input {
+            width: 98%;
+        }
+
+        button {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>EURHUF</caption>
+        <tr>
+            <th>EUR</th>
+            <td><input type="number"></td>
+        </tr>
+        <tr>
+            <th>HUF</th>
+            <td><input type="number" disabled></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button type="button">Számolás</button></td>
+        </tr>
+    </table>
+</body>
+</html>
