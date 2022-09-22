@@ -28,20 +28,28 @@
             width: 100%;
         }
     </style>
+
+    <script>
+        function calculate() {
+            let eur = document.getElementById('eur');
+            let huf = document.getElementById('huf');
+            huf.value = parseInt(eur.value) * 408;
+        }
+    </script>
 </head>
 <body>
     <table>
         <caption>EURHUF</caption>
         <tr>
             <th>EUR</th>
-            <td><input type="number"></td>
+            <td><input id="eur" type="number"></td>
         </tr>
         <tr>
             <th>HUF</th>
-            <td><input type="number" disabled></td>
+            <td><input id="huf" type="number" disabled></td>
         </tr>
         <tr>
-            <td colspan="2"><button type="button">Számolás</button></td>
+            <td colspan="2"><button type="button" onclick="calculate()">Számolás</button></td>
         </tr>
     </table>
 </body>
