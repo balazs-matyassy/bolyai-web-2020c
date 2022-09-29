@@ -25,3 +25,22 @@ input.value = input.value + input.value;
 
 // Szükség esetén számmá kell alakítani az értékeket.
 alert(parseInt(input.value) * 2);
+
+// Elemek bejárása
+let elemek = document.querySelectorAll("h2");
+
+for (let i = 0; i < elemek.length; i++) {
+    elemek[i].innerHTML = "HELLO";
+}
+
+// Függvények ("tárolt kód")
+function mindentHellora() {
+    let elemek = document.querySelectorAll("h2");
+
+    for (let i = 0; i < elemek.length; i++) {
+        elemek[i].innerHTML = "HELLO";
+    }
+}
+
+// Függvény meghívása kattintáskor
+// <button type="button" onclick="mindentHellora()">ÁTÁLLÍT</button>
