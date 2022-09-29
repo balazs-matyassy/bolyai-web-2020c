@@ -14,6 +14,10 @@ let elemek = document.querySelectorAll('h2');
 
 // szöveges elemek (div, span, p, h1, h2, li, td, th...)
 // tartalma az innerHTML tulajdonság segítségével írható / olvasható
+// (vagy az innerText tulajdonság segítségével)
+
+// Pl. innerHTML -> <p>Hello <b>World</b></p>
+// Pl. innerText -> Hello World (ha írjuk, akkor elveszhetnek formázások)
 
 // Pl. tartalom kétszerezése
 // += rövidítés használható
