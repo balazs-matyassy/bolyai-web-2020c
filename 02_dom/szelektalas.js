@@ -22,3 +22,6 @@ elem.innerHTML = elem.innerHTML + elem.innerHTML;
 // bemeneti elemek (input...) tartalma a value tulajdonság segítségével írható / olvasható
 let input = document.getElementById('bemenet');
 input.value = input.value + input.value;
+
+// Szükség esetén számmá kell alakítani az értékeket.
+alert(parseInt(input.value) * 2);
