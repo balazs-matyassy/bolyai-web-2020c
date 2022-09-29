@@ -1,0 +1,50 @@
+1.
+
+'B' betűs országok 'A' betűs városai.
+
+SELECT *
+FROM `city`
+INNER JOIN `country`
+ON `country`.`Code` = `city`.`CountryCode`
+WHERE `city`.`Name` LIKE 'a%' AND `country`.`Name` LIKE 'b%';
+
+2.
+Azok a városok, ahol legalább az ország lakosságának a fele él.
+
+3.
+Afrikai, ázsiai és európai 1M és 2M közötti lakosságszámú városok listája.
+
+4.
+Európában beszélt hivatalos nyelvek listája (országgal együtt).
+
+5.
+'A' betűs országokban beszélt NEM hivatalos nyelvek listája.
+
+6. (+)
+Milyen 'M', 'N', 'O', 'P' betűs városokban hivatalos nyelv a német?
+
+-----
+7. Hány éve függetlenedtek a volt gyarmatok?
+
+https://www.w3schools.com/mysql/mysql_ref_functions.asp
+
+SELECT COUNT(*) FROM `country`;
+-> 239
+
+SELECT COUNT(*) FROM `country` WHERE `IndepYear` >= 1950;
+-> 110
+
+SELECT COUNT(*) FROM `country` WHERE `IndepYear` < 1950;
+-> 82
+
+SELECT COUNT(*) FROM `country` WHERE `IndepYear` IS NULL;
+-> 47
+
+Azért vesznek el országok, mert bizonyos országok soha nem voltak gyarmatok.
+NULL
+
+------
+2 > 1 -> TRUE
+2 > 5 -> FALSE
+2 > NULL -> UNKNOWN
+NOT (2 > NULL) -> UNKNOWN
